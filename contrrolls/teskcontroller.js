@@ -9,7 +9,7 @@ export const createtask = async (req, res, next) => {
     user: req.user,
   });
   if (!task) {
-    return next(new errhandler("task is not added", 406));
+    return next(new errhandler("task not add", 406));
   }
 
   res.status(200).json({
