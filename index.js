@@ -23,5 +23,9 @@ app.use(
     credentials: true,
   })
 );
+app.get("/", (req, res) => {
+  res.send("Nice working");
+});
+
 app.use(errorhandler);
 DBconnection();
