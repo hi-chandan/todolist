@@ -14,10 +14,9 @@ const Login = () => {
 
   const loginfo = async (e) => {
     e.preventDefault();
-    //todolist-xlsy.onrender.com/
     https: try {
       const data = await axios.post(
-        "https://todolist-xlsy.onrender.com/user/login",
+        "/user/login",
         {
           email,
           password,

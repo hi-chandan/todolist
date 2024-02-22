@@ -8,10 +8,10 @@ import {
 } from "../contrrolls/teskcontroller.js";
 const router = express.Router();
 
-router.post("/add", isAuthantication, createtask);
-router.get("/tasks", isAuthantication, mytask);
+router.post("api/add", isAuthantication, createtask);
+router.get("api/tasks", isAuthantication, mytask);
 router
-  .route("/task/:id")
+  .route("api/task/:id")
   .put(isAuthantication, updatetask)
   .delete(isAuthantication, removetask);
 export default router;
