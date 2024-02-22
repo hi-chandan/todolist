@@ -26,6 +26,11 @@ export const Createuser = async (req, res, next) => {
 
 export const loginuser = async (req, res, next) => {
   const { email, password } = req.body;
+
+  if (!email || !password) {
+    return next(new errhandler("please provide detail", 500));
+  }
+
   const user = await User.findOne({ email });
   if (!user) {
     return next(new errhandler("user first register"));
