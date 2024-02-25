@@ -12,6 +12,7 @@ const userschama = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Emter you password"],
+    select: false,
   },
 });
 

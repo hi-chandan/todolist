@@ -5,7 +5,10 @@ export class errhandler extends Error {
   }
 }
 export const errorhandler = (err, req, res, next) => {
-  return res.status(200).json({
+  err.message = err.message || "Internal Server Error";
+  err.statusCode = err.statusCode || 500;
+
+  return res.status(err.statusCode).json({
     success: false,
     message: err.message,
   });

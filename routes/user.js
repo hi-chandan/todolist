@@ -9,10 +9,10 @@ import { isAuthantication } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.post("/api/new/user", Createuser);
-router.post("/api/user/login", loginuser);
+router.post("/register", Createuser);
+router.post("/login", loginuser);
 
-router.get("/api/my", isAuthantication, myprofile);
-router.get("/api/logout", logout);
+router.get("/me", isAuthantication, myprofile);
+router.get("/logout", logout);
 
 export default router;

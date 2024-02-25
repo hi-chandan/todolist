@@ -1,14 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../src/main";
-import { Link, useNavigate } from "react-router-dom";
-const Login = () => {
+import toast from "react-hot-toast";
+import axios from "axios";
+
+const Register = () => {
   const navigate = useNavigate();
   const { isAuthentication, setisAuthentication } = useContext(Context);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-
+  const [name, setname] = useState("");
   let axiosConfig = {
     headers: {
       "Content-Type": "application/json",
@@ -21,8 +22,9 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        `api/v1/login`,
+        `api/v1/register`,
         {
+          name,
           email,
           password,
         },
@@ -48,6 +50,14 @@ const Login = () => {
         <input
           className="p-2 w-full border-none outline-none text-lg rounded-md"
           type="text"
+          placeholder="your name"
+          name="name"
+          value={name}
+          onChange={(e) => setname(e.target.value)}
+        />
+        <input
+          className="p-2 w-full border-none outline-none text-lg rounded-md"
+          type="text"
           placeholder="Enter you email"
           name="email"
           value={email}
@@ -62,13 +72,10 @@ const Login = () => {
           value={password}
           onChange={(e) => setpassword(e.target.value)}
         />
-        <button className="bg-green-600 p-3 w-2/4 ">Login</button>
-        <p className="text-blue-900">
-          <Link to={"/register"}>Regster/signup</Link>
-        </p>
+        <button className="bg-green-600 p-3 w-2/4 ">Register</button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;
