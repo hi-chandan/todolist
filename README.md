@@ -61,17 +61,11 @@ Set up Evvironment Variables
 Create a new file name Config.env in the database folder and add the following content:
 
 ```bash
-port=              (3000/4000/5000/8000/ any one of it's)
-MONGO_DB=______     (your mongo db  url )
-
-SECREAT_CODE= _______    (example: anyjwtcodesljfdljf)
-
-
+port=_______     example   (3000/4000/5000/8000/ any one of it's)
+MONGO_DB=______            (your mongo db  url )
+SECREAT_CODE= _______      (example: anyjwtcodesljfdljf)
+FRONT_END= _______         (http://localhost:5173  put your own localhost url to avoid cors error)
 NODE_ENV=Development
-
-
-FRONT_END= _______       (http://localhost:5173  put your own localhost url to avoid cors error)
-
 ```
 
 for learning Readme.md
