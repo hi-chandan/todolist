@@ -11,7 +11,7 @@ const Myprofile = () => {
     if (!isAuthentication) return navigate("/login");
   }, []);
   return (
-    <div className="bg-green-500 flex justify-center h-full">
+    <div className="bg-green-500 flex flex-col  justify-center h-full">
       <h1 className="text-3xl">Welcom {user.name}</h1>
       <p className="text-2xl">{user.email}</p>
     </div>
