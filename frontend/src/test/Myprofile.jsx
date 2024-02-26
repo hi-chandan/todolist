@@ -9,9 +9,9 @@ const Myprofile = () => {
 
   useEffect(() => {
     if (!isAuthentication) return navigate("/login");
-  }, []);
+  }, [user]);
   return (
-    <div className="bg-green-500 flex flex-col  justify-center h-full">
+    <div className="bg-green-500 flex flex-col  items-center justify-center h-full">
       <h1 className="text-3xl">Welcom {user.name}</h1>
       <p className="text-2xl">{user.email}</p>
     </div>
